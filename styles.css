@@ -1366,7 +1366,7 @@ main > .section {
 
   .hero .actions .button {
     width: 100%;
-    max-width: 360px;
+    max-width: none;
   }
 
 }
@@ -3276,11 +3276,11 @@ main > .section.action-gallery {
 
   .booking .actions .button {
     width: 100%;
-    max-width: 360px;
+    max-width: none;
   }
 
   .booking {
-    padding: 64px 24px;
+    padding: 64px 20px;
   }
 
   .booking {
