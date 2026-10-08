@@ -2632,6 +2632,8 @@ main > .two-sides ~ section .eyebrow {
 .gallery-slider--native .gallery-slider__viewport {
   overflow-x: auto;
   overflow-y: hidden;
+  touch-action: auto;
+  scroll-snap-type: none;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -2689,7 +2691,6 @@ main > .section.action-gallery {
     margin-left: -4px;
     margin-right: -24px;
     padding: 20px 0px 40px 20px;
-    touch-action: pan-y pinch-zoom;
   }
 
   .gallery-slider .collage .collage__item {
