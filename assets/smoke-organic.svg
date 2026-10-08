@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000" viewBox="0 0 900 1000">
+  <defs>
+    <filter id="smoke" x="-40%" y="-25%" width="180%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".009 .016" numOctaves="3" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="145" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".25" stop-color="white" stop-opacity=".6"/>
+      <stop offset=".65" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="edge"><rect width="900" height="1000" fill="url(#fade)"/></mask>
+  </defs>
+  <g mask="url(#edge)">
+    <g filter="url(#smoke)" fill="none" stroke="#d4d6ce" stroke-linecap="round">
+      <path d="M490 1020 C410 870 620 770 465 620 S240 455 425 330 S600 200 310 -50" stroke-width="70" opacity=".28"/>
+      <path d="M470 1030 C540 880 340 790 440 650 S670 520 500 380 S230 190 450 -60" stroke-width="38" opacity=".32"/>
+      <path d="M490 1040 C420 820 520 730 380 530 S520 280 380 60" stroke-width="19" opacity=".38"/>
+      <path d="M450 900 C330 740 620 600 530 450 S320 240 570 -40" stroke-width="100" opacity=".12"/>
+    </g>
+  </g>
+</svg>
