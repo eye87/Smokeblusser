@@ -2629,6 +2629,27 @@ main > .two-sides ~ section .eyebrow {
   padding-right: 20px;
 }
 
+.gallery-slider--native .gallery-slider__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-slider--native .gallery-slider__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-slider--native .collage {
+  transition: none;
+  transform: none;
+}
+
+.gallery-slider--native .gallery-slider__controls {
+  display: none;
+}
+
 .gallery-slider__arrow {
   width: 48px;
   height: 48px;
@@ -3238,9 +3259,10 @@ main > .section.action-gallery {
 
 @media (min-width: 1201px) {
   .booking > img {
-    left: 74%;
-    top: 140px;
+    left: 64%;
+    top: 50%;
     width: min(75vw, 1500px);
+    transform: translateY(-50%) scaleX(-1);
   }
 }
 

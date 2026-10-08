@@ -192,6 +192,30 @@ if (gallery) {
   const track = gallery.querySelector('.collage');
   const slides = [...track.children];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const nativeSwipe = window.matchMedia('(max-width: 860px), (max-width: 1200px) and (pointer: coarse)').matches;
+  if (nativeSwipe) {
+    // Let the browser handle touch tracking and momentum without per-item locks.
+    gallery.classList.add('gallery-slider--native');
+    const viewport = gallery.querySelector('.gallery-slider__viewport');
+    let scrollFrame = 0;
+    viewport.addEventListener('scroll', () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(() => {
+        scrollFrame = 0;
+        const distance = slides[1].offsetLeft - slides[0].offsetLeft;
+        const current = Math.min(slides.length - 1, Math.max(0, Math.round(viewport.scrollLeft / distance)));
+        gallery.querySelector('[data-gallery-status]').textContent = `Foto ${current + 1} van ${slides.length}`;
+      });
+    }, { passive: true });
+    gallery.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+      event.preventDefault();
+      viewport.scrollBy({ left: (slides[1].offsetLeft - slides[0].offsetLeft) * (event.key === 'ArrowRight' ? 1 : -1), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    });
+    gallery.addEventListener('click', event => {
+      if (event.target.closest('[data-open-video]')) dialog?.showModal();
+    });
+  } else {
   let index = 0;
   const cycleLength = slides.length * 2;
   let position = cycleLength;
@@ -279,4 +303,5 @@ if (gallery) {
   });
   new ResizeObserver(measureSlides).observe(gallery.querySelector('.gallery-slider__viewport'));
   measureSlides();
+  }
 }
