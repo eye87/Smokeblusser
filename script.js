@@ -147,7 +147,7 @@ const smokerVisual = document.querySelector('.smoker__visual');
 if (smokerVisual) {
   const photo = smokerVisual.querySelector('img');
   const overlay = smokerVisual.querySelector('.smoker__connections');
-  const anchors = [[.22, .20], [.73, .46], [.045, .73]];
+  const anchors = [[.22, .20], [.73, .54], [.045, .73]];
   const labels = [...smokerVisual.querySelectorAll('.annotation')];
   const drawConnections = () => {
     const box = smokerVisual.getBoundingClientRect();
