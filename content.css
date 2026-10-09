@@ -1,4 +1,29 @@
 /* Shared layout for editorial and legal content pages. */
+.contact-page__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; margin-top: 56px; align-items: start; }
+.contact-page__grid h2 { font-family: var(--display); text-transform: uppercase; font-size: clamp(30px, 3vw, 44px); line-height: 1.1; margin: 0 0 24px; }
+.contact-page__grid p { line-height: 1.7; }
+.contact-page__direct { background: var(--surface-dark); color: var(--cream); padding: 40px; }
+.contact-page__direct > a:not(.button) { color: var(--cream); text-underline-offset: 4px; overflow-wrap: anywhere; }
+.contact-page__direct > a:not(.button):hover { color: var(--red); }
+.contact-page__note { margin-top: 40px; }
+.contact-page__request, .contact-page__faq { scroll-margin-top: 160px; }
+.contact-form__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 32px 0 24px; }
+.contact-page form label { display: block; font-weight: 700; }
+.contact-page form label > span { font-weight: 400; font-size: 13px; }
+.contact-page input, .contact-page select, .contact-page textarea { display: block; width: 100%; min-width: 0; min-height: 48px; margin-top: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 16px; }
+.contact-page textarea { resize: vertical; }
+.contact-page input:focus-visible, .contact-page select:focus-visible, .contact-page textarea:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.contact-form__hint, #request-status { font-size: 14px; line-height: 1.6; margin: 24px 0; }
+.contact-form__hint a { text-underline-offset: 4px; }
+.contact-form__hint a:hover { color: var(--red); }
+.contact-page__faq { margin-top: 64px; }
+@media (max-width: 1000px) { .contact-page__grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 600px) {
+  .contact-page__grid { margin-top: 32px; }
+  .contact-page__direct { padding: 28px 20px; }
+  .contact-form__fields { grid-template-columns: 1fr; gap: 20px; }
+  .contact-page .button { width: 100%; min-width: 0; }
+}
 .faq-group { margin-bottom: 48px; }
 .faq-group details { border-bottom: 1px solid var(--line); }
 .faq-group details:first-of-type { border-top: 1px solid var(--line); }

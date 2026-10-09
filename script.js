@@ -50,6 +50,15 @@ window.addEventListener('resize', () => {
   scheduleHeader();
 }, { passive: true });
 updateHeader();
+// The bar can change height after fonts load or responsive layout settles.
+// Keep the logo shadow clipped to its actual bottom edge, even without scrolling.
+if (header && 'ResizeObserver' in window) {
+  new ResizeObserver(() => {
+    headerHeight = header.offsetHeight;
+    previousProgress = -1;
+    scheduleHeader();
+  }).observe(header);
+}
 
 // Reveal copy once; keep photos and their layout completely still.
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

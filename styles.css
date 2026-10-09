@@ -1003,6 +1003,8 @@ main > .section {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 7px 20px;
     clip-path: inset(var(--logo-shadow-cutoff,74px) -40px -40px -40px);
+    /* Do not animate the clipping boundary independently of the logo. */
+    transition: none;
     z-index: -1;
     pointer-events: none;
   }

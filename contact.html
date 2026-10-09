@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Neem contact op met Smokeblusser Foodtruck en vraag vrijblijvend een reservering aan voor jouw evenement.">
+  <title>Contact & reserveren — Smokeblusser</title>
+  <link rel="stylesheet" href="content.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="contact.js" defer></script>
+</head>
+<body class="content-layout">
+  <a class="skip-link" href="#main">Naar de inhoud</a>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html#top" aria-label="Smokeblusser home"><img src="assets/logo.svg" alt="Smokeblusser Foodtruck"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Hoofdnavigatie">
+      <div class="smoke-organic" aria-hidden="true"><span></span><span></span><span></span></div>
+      <a href="index.html#concept">Ons concept</a><a href="index.html#mogelijkheden">Mogelijkheden</a><a href="contact.html" aria-current="page">Contact</a>
+      <a class="mobile-request-link" href="#aanvragen">Smokeblusser aanvragen <span aria-hidden="true">→</span></a>
+    </nav>
+    <a class="button button--red header-cta" href="#aanvragen">Smokeblusser aanvragen <span aria-hidden="true">→</span></a>
+  </header>
+  <main id="main">
+    <section class="content-page contact-page" aria-labelledby="page-title">
+      <div class="content-page__intro">
+        <p class="eyebrow">Contact <span>/ jouw evenement</span></p>
+        <h1 id="page-title">Goed gezelschap.<em>Begint hier.</em></h1>
+        <p>Een bruiloft, bedrijfsfeest of festival? Vertel ons je plannen. We bekijken graag hoe de Smokeblusser bij jouw evenement past.</p>
+      </div>
+      <div class="contact-page__grid">
+        <aside class="contact-page__direct" aria-labelledby="direct-title">
+          <p class="eyebrow">Even overleggen?</p>
+          <h2 id="direct-title">We helpen je<br>graag verder.</h2>
+          <p>Een vraag of nog geen concrete datum? Mail ons gerust.</p>
+          <a href="mailto:info@smokeblusser.nl">info@smokeblusser.nl</a>
+          <p class="contact-page__note">Liever eerst wat meer weten? Hieronder vind je de antwoorden op veelgestelde vragen.</p>
+          <a class="button button--outline-light" href="#vragen">Veelgestelde vragen <span aria-hidden="true">→</span></a>
+        </aside>
+        <section class="contact-page__request" id="aanvragen" aria-labelledby="request-title">
+          <p class="eyebrow">Vrijblijvend aanvragen</p>
+          <h2 id="request-title">De Smokeblusser op jouw evenement.</h2>
+          <p>Vul in wat je al weet. We bespreken vervolgens de beschikbaarheid, mogelijkheden en prijs. Een aanvraag is nog geen definitieve boeking.</p>
+          <form id="request-form" action="mailto:info@smokeblusser.nl" method="post" enctype="text/plain">
+            <div class="contact-form__fields">
+              <label>Naam <span>(verplicht)</span><input name="Naam" autocomplete="name" required maxlength="120"></label>
+              <label>E-mailadres <span>(verplicht)</span><input name="E-mailadres" type="email" autocomplete="email" required maxlength="254"></label>
+              <label>Telefoonnummer <span>(optioneel)</span><input name="Telefoonnummer" type="tel" autocomplete="tel" maxlength="40"></label>
+              <label>Datum evenement <span>(optioneel)</span><input name="Datum" type="date"></label>
+              <label>Locatie <span>(verplicht)</span><input name="Locatie" required placeholder="Plaats of locatie" maxlength="200"></label>
+              <label>Aantal gasten <span>(optioneel)</span><input name="Aantal gasten" type="number" min="1" max="100000" inputmode="numeric"></label>
+              <label>Type evenement<select name="Evenement"><option value="Nog te bespreken">Maak een keuze</option><option>Bedrijfsfeest</option><option>Bruiloft</option><option>Festival</option><option>Privéfeest</option><option>Anders</option></select></label>
+              <label>Interesse in<select name="Interesse"><option>Koffie &amp; bier</option><option>Koffie</option><option>Bier &amp; dranken</option><option>Smoker — informeer naar beschikbaarheid</option><option>Nog te bespreken</option></select></label>
+            </div>
+            <label>Vertel ons je plannen <span>(optioneel)</span><textarea name="Wensen" rows="5" maxlength="2000" placeholder="Bijvoorbeeld de tijden, sfeer en bijzondere wensen."></textarea></label>
+            <p class="contact-form__hint" id="email-hint">Deze knop opent je e-mailapp met de ingevulde aanvraag. Je verstuurt de e-mail daar zelf. Werkt dat niet? Mail je gegevens naar <a href="mailto:info@smokeblusser.nl">info@smokeblusser.nl</a>.</p>
+            <button class="button button--red" type="submit" aria-describedby="email-hint">Aanvraag per e-mail <span aria-hidden="true">→</span></button>
+            <p id="request-status" role="status"></p>
+          </form>
+        </section>
+      </div>
+      <div class="content-page__body contact-page__faq" id="vragen">
+        <section class="faq-group" aria-labelledby="questions-title">
+          <p class="eyebrow">Goed om te weten</p>
+          <h2 id="questions-title">Veelgestelde vragen.</h2>
+          <details><summary>Is mijn aanvraag meteen een reservering?</summary><div class="faq-answer"><p>Nee. We bekijken eerst de beschikbaarheid en bespreken jouw wensen en de kosten. Een boeking wordt pas definitief nadat de afspraken schriftelijk zijn bevestigd.</p></div></details>
+          <details><summary>Wat kost het om de Smokeblusser te boeken?</summary><div class="faq-answer"><p>Dat hangt af van de locatie, inzetduur, het aantal gasten en het gekozen aanbod. Met jouw aanvraag kunnen we een passend voorstel bespreken.</p></div></details>
+          <details><summary>Kan ik koffie en bier combineren?</summary><div class="faq-answer"><p>De wagen heeft een koffie- en een bierzijde. Geef aan welke kant of combinatie je wilt inzetten; we stemmen het aanbod vooraf samen af.</p></div></details>
+          <details><summary>Wat moet ik op locatie regelen?</summary><div class="faq-answer"><p>Een veilige en bereikbare standplaats is belangrijk. De benodigde ruimte, aanrijroute en eventuele stroom- en watervoorziening bespreken we vooraf.</p></div></details>
+          <details><summary>Kan ik de smoker ook aanvragen?</summary><div class="faq-answer"><p>Geef je interesse gerust door. De smoker is aangekondigd als de derde kant; we bespreken de actuele planning en bevestigen of deze beschikbaar is voor jouw datum.</p></div></details>
+        </section>
+        <a class="button button--outline-dark" href="veelgestelde-vragen.html">Alle veelgestelde vragen <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer__main">
+      <div class="footer__brand-panel">
+        <div class="footer__statement"><span>Smoke</span><em>Blusser.</em></div>
+        <a class="footer__logo" href="index.html" aria-label="Smokeblusser home"><img src="assets/logo.svg" alt="Smokeblusser Foodtruck"></a>
+        <div class="footer__actions"><a class="button button--red" href="#aanvragen">Smokeblusser aanvragen <span aria-hidden="true">→</span></a><a class="button button--outline-dark" href="mailto:info@smokeblusser.nl">Contact opnemen <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="footer__content-panel">
+        <div class="footer__tagline"><p class="eyebrow">Klaar voor jouw evenement</p><h2>Van eerste koffie<br>tot laatste ronde</h2></div>
+        <nav class="footer__links" aria-label="Footernavigatie">
+          <div><b>Ontdek</b><a href="index.html#concept">Concept</a><a href="index.html#mogelijkheden">Mogelijkheden</a><a href="index.html#verhaal">Verhaal</a></div>
+          <div><b>Hulp</b><a href="#aanvragen">Beschikbaarheid</a><a href="#aanvragen">Brochure &amp; prijzen</a><a href="veelgestelde-vragen.html">Veelgestelde vragen</a></div>
+          <div><b>Socials</b><a class="social-link" href="#" aria-label="Volg Smokeblusser op Instagram"><img src="assets/icon-instagram.svg" alt="">Volg ons</a></div>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__legal"><span>© 2026 Smokeblusser Foodtruck</span><div class="footer__legal-links"><a href="algemene-voorwaarden.html">Algemene voorwaarden</a><a href="#">Privacyverklaring</a></div><span>Ontwikkeld door <em>Eye Entertainment</em></span></div>
+  </footer>
+</body>
+</html>
