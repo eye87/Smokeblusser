@@ -5,10 +5,10 @@
 :root {
   --surface-dark: #161616;
   --photo-dark: #2f312c;
-  --hero-red: #ff0519;
-  --cream: #f4edda;
-  --red: #ca0616;
-  --red-hover: #b0000e;
+  --hero-red: #FF0519;
+  --cream: #FBECDE;
+  --red: #D33A34;
+  --red-hover: #B72F2A;
   --dark: #242621;
   --ink: #171815;
   --sand: #e0d2b8;
@@ -194,12 +194,12 @@ html {
 
 .button--outline-light {
   color: var(--cream);
-  border-color: rgba(244, 237, 218, 0.65);
+  border-color: rgba(251, 236, 222, 0.65);
 }
 
 .button--disabled {
-  border-color: rgba(244, 237, 218, 0.35);
-  color: rgba(244, 237, 218, 0.55);
+  border-color: rgba(251, 236, 222, 0.35);
+  color: rgba(251, 236, 222, 0.55);
   pointer-events: none;
 }
 
@@ -210,12 +210,16 @@ html {
   flex-wrap: wrap;
 }
 
+h2 {
+  letter-spacing: 0.01em;
+}
+
 .section h2 {
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
   line-height: 0.88;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin: 0px;
 }
 
@@ -506,7 +510,7 @@ main > .section {
 @media (max-width: 860px) {
   .site-header .main-nav a.mobile-request-link {
     display: block;
-    color: #ff0519;
+    color: var(--red);
   }
 }
 
@@ -889,7 +893,7 @@ main > .section {
     gap: 12px;
     padding: 16px 20px;
     max-width: 100%;
-    background: var(--hero-red);
+    background: var(--red);
     color: var(--cream);
     font-size: clamp(17px, 4.8vw, 22px);
   }
@@ -1704,13 +1708,13 @@ main > .two-sides ~ section .eyebrow {
   main > .two-sides ~ section h2 {
     font-size: clamp(34px, 9vw, 48px);
     line-height: 1.08;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
 
   .two-sides .section-heading h2 {
     font-size: clamp(34px, 9vw, 48px);
     line-height: 1.08;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
 
   .two-sides .section-heading h2 > span {
@@ -1834,7 +1838,7 @@ main > .two-sides ~ section .eyebrow {
   top: -8%;
   font: 9rem/.78 var(--display);
   text-transform: uppercase;
-  color: rgba(244, 237, 218, 0.043);
+  color: rgba(251, 236, 222, 0.043);
 }
 
 .annotation {
@@ -2375,14 +2379,34 @@ main > .two-sides ~ section .eyebrow {
   height: 92px;
   border: 0px;
   border-radius: 50%;
-  background: var(--red);
-  color: white;
-  font-size: 1.4rem;
+  background: #F4EDDA;
+  display: grid;
+  place-items: center;
+  padding: 0;
   cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-slider .collage .play img {
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+  transform: none;
+  margin-left: 4%;
 }
 
 .play:hover {
   transform: translate(-50%, -50%) scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play {
+    transition: none;
+  }
+
+  .play:hover {
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (max-width: 1050px) {
@@ -2659,7 +2683,7 @@ main > .two-sides ~ section .eyebrow {
   height: 48px;
   background: transparent;
   color: var(--cream);
-  border: 1px solid rgba(244, 237, 218, 0.5);
+  border: 1px solid rgba(251, 236, 222, 0.5);
   font-size: 26px;
   cursor: pointer;
 }
@@ -2800,7 +2824,7 @@ main > .section.action-gallery {
   position: absolute;
   z-index: -1;
   font: 12rem/1 var(--display);
-  color: rgba(202, 6, 22, 0.07);
+  color: rgba(211, 58, 52, 0.07);
   right: -2rem;
   top: -7rem;
 }
@@ -3021,7 +3045,7 @@ main > .section.action-gallery {
   font-weight: 400;
   text-transform: uppercase;
   line-height: 0.88;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin: 0px;
 }
 
@@ -3117,7 +3141,7 @@ main > .section.action-gallery {
 
 .booking .button--outline-light {
   color: var(--cream);
-  border-color: rgba(244, 237, 218, 0.65);
+  border-color: rgba(251, 236, 222, 0.65);
 }
 
 .booking__copy > .actions {
@@ -3293,7 +3317,7 @@ main > .section.action-gallery {
   .booking h2 {
     font-size: clamp(34px, 9vw, 48px);
     line-height: 1.08;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
   }
 
   .booking__copy {
@@ -3506,7 +3530,7 @@ main > .section.action-gallery {
 .footer__brand-panel {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0px, 1fr) 150px;
+  grid-template-columns: max-content 180px;
   column-gap: 2.5rem;
   padding-right: 4.5rem;
 }
@@ -3517,7 +3541,10 @@ main > .section.action-gallery {
 
 .footer__logo {
   grid-area: 1 / 2;
-  width: 150px;
+  width: 180px;
+  align-self: center;
+  position: relative;
+  top: -8px;
 }
 
 .footer__actions {
@@ -3767,19 +3794,61 @@ main > .section.action-gallery {
 
 }
 
+@media (min-width: 1401px) {
+  .footer__main {
+    grid-template-columns: minmax(540px, .9fr) minmax(0, 1.35fr);
+  }
+
+  .footer__brand-panel {
+    grid-template-columns: max-content clamp(150px, 10vw, 180px);
+    column-gap: 24px;
+    padding-right: 32px;
+    align-content: start;
+  }
+
+  .footer__statement {
+    font-size: clamp(80px, 5.5vw, 95px);
+    line-height: .98;
+  }
+
+  .footer__logo {
+    width: clamp(150px, 10vw, 180px);
+  }
+
+  .footer__content-panel {
+    padding-left: 40px;
+  }
+
+  .footer__actions {
+    margin-top: 48px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer__tagline h2 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .footer__links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+}
+
 @media (min-width: 861px) and (max-width: 1400px) {
   .footer__main {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .footer__brand-panel {
-    grid-template-columns: max-content 180px;
+    grid-template-columns: max-content 216px;
     column-gap: 48px;
     padding-right: 0;
   }
 
   .footer__logo {
-    width: 180px;
+    width: 216px;
     align-self: center;
   }
 
@@ -3817,18 +3886,21 @@ main > .section.action-gallery {
   }
 
   .footer__brand-panel {
-    grid-template-columns: minmax(0px, 1fr) 105.6px;
-    gap: 20px;
+    grid-template-columns: max-content minmax(0px, 1fr);
+    column-gap: 12px;
+    row-gap: 20px;
     padding: 0px;
   }
 
   .footer__statement {
-    font-size: clamp(48px, 14vw, 70px);
+    font-size: clamp(40px, 12vw, 70px);
     line-height: 0.98;
   }
 
   .footer__logo {
-    width: 105.6px;
+    width: clamp(110px, 32vw, 150px);
+    max-width: 100%;
+    justify-self: start;
     align-self: center;
   }
 
